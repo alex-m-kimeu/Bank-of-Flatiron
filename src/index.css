@@ -23,32 +23,65 @@ a{
 /* Header */
 header{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px 120px;
+  gap: 5px;
   background-color: #fcfbf4;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.header_title{
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.header_title img{
+header img{
   width: 30px;
   height: 30px;
   object-fit: contain;
 }
-.header_title h2{
+header h2{
   font-size: 1.5rem;
   font-weight: 600;
   text-transform: capitalize;
 }
-.search_container{
-  display: flex;
-  gap: 5px;
+
+/* Home */
+.home_title{
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px;
 }
-input{
-  outline: none;
-  padding: 8px 20px;
+.transactions_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.transactions_table td, .transactions_table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.transactions_table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+.transactions_table tr:hover {
+  background-color: #ddd;
+}
+.transactions_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2d2e2e;
+  color: #fff;
+}
+
+/* Footer */
+footer{
+  display: flex;
+  background-color: #fcfbf4;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+}
+footer h2{
+  font-size: 1rem;
+  font-weight: 200;
 }
