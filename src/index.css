@@ -27,7 +27,7 @@ header{
   align-items: center;
   padding: 10px 120px;
   gap: 5px;
-  background-color: #fcfbf4;
+  background-color: #f2f2f2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 header img{
@@ -44,13 +44,14 @@ header h2{
 /* Home */
 .home_title{
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
   padding: 10px;
 }
 .transactions_table {
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 50px;
 }
 .transactions_table td, .transactions_table th {
   border: 1px solid #ddd;
@@ -70,13 +71,45 @@ header h2{
   color: #fff;
 }
 
+/* Add Transaction */
+.create{
+  max-width: 400px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label{
+  text-align: left;
+  display: block;
+}
+.create h2{
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.create input{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create button {
+  background: #2d2e2e;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 /* Footer */
 footer{
   display: flex;
-  background-color: #fcfbf4;
+  background-color: #f2f2f2;
   justify-content: center;
   align-items: center;
-  position: fixed;
   bottom: 0;
   height: 50px;
   width: 100%;
