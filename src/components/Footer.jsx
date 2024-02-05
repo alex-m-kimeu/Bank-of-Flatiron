@@ -1,4 +1,4 @@
-function Footer({copyright}) {
+function Footer({ copyright }) {
     return (
         <footer>
             <h2>{copyright}</h2>

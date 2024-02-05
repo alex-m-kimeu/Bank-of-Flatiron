@@ -1,18 +1,33 @@
-import appData from "../data/data";
-import Footer from "./Footer";
+import { useState, useEffect } from "react";
+import data from "../data/appData";
 import Header from "./Header";
-import Home from "./Home";
+import Transactions from "./Transactions"
+import TransactionsForm from "./TransactionsForm";
+import Footer from "./Footer";
 
 function App() {
+    const [transactions, setTransactions] = useState([])
+
+    // Fetch Transactions
+    useEffect(() => {
+        fetch("https://transactions-api-psi.vercel.app/transactions")
+            .then(resp => resp.json())
+            .then(data => setTransactions(data))
+    }, [])
+
+    // Add New Transaction
+    function addTransaction(transaction) {
+        setTransactions([...transactions, transaction])
+    }
+
     return (
         <>
-        <Header name={appData.name} logo={appData.logo}/>
-        <div className="content">
-            <Home />
-        </div>
-        <Footer copyright={appData.copyright}/>
+        <Header name={data.name} logo={data.logo}/>
+        <TransactionsForm addTransaction={addTransaction}/>
+        <Transactions transactions={transactions}/>
+        <Footer copyright={data.copyright}/>
         </>
-    )
+    );
 }
 
 export default App;

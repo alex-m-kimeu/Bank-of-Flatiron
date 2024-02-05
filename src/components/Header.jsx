@@ -1,9 +1,9 @@
-function Header({name, logo}) {
+function Header({ name, logo }) {
     return (
         <header>
             <img src={ logo } alt="logo" />
-            <h2>{ name }</h2>
-       </header>
+            <h1>{ name }</h1>
+        </header>
     );
 }
 
