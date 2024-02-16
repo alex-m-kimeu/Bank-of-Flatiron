@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TransactionsForm({ addTransaction }) {
+export const TransactionsForm = ({ addTransaction }) => {
     const [date, setDate] = useState("")
     const [description, setDescription] = useState("")
     const [category, setCategory] = useState("")
@@ -14,7 +14,21 @@ function TransactionsForm({ addTransaction }) {
             category,
             amount,
         }
-        addTransaction(newTransaction)
+        fetch("https://transactions-api-psi.vercel.app/transactions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newTransaction)
+        })
+        .then(response => response.json())
+        .then(data => {
+            addTransaction(data)
+        })
+        setDate("")
+        setDescription("")
+        setCategory("")
+        setAmount("")
     }
 
     return (
@@ -58,5 +72,3 @@ function TransactionsForm({ addTransaction }) {
         </div>
     );
 }
-
-export default TransactionsForm;

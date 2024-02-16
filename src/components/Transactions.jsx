@@ -1,7 +1,7 @@
-function Transactions({ transactions }) {
+export const Transactions = ({ transactions }) => {
+    
     return (
         <div className="transactions_content">
-            <h2>My Transactions</h2>
             <table className="transactions_table">
                 <thead>
                     <tr>
@@ -24,6 +24,4 @@ function Transactions({ transactions }) {
             </table>
         </div>
     );
-}
-
-export default Transactions;
+};

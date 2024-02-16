@@ -1,4 +1,4 @@
-function Header({ name, logo }) {
+export const Header = ({ name, logo }) => {
     return (
         <header>
             <img src={ logo } alt="logo" />
@@ -6,5 +6,3 @@ function Header({ name, logo }) {
         </header>
     );
 }
-
-export default Header;
